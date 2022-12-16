@@ -41,8 +41,9 @@
     position: relative;
     cursor: pointer;
     text-decoration: none; /* Убираем подчеркивание */
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 20px;
+    font-size: 20px;
 }
 
 .underline-one:hover {

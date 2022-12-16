@@ -15,13 +15,16 @@ export default function Sidebar() {
         </div>
         <div className='blockLinkSidebar'>
           <Link className='underline-one'>
+            Все
+          </Link>
+          <Link className='underline-one'>
             Сайты
           </Link>
           <Link className='underline-one'>
-            Веб приложения
+            Приложения
           </Link>
           <Link className='underline-one'>
-            Android/ios приложения
+            Комплекс (Сайт+Приложение)
           </Link>
         </div>
       </div>

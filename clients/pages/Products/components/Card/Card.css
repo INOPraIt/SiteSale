@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap');
 
 .card {
-  width: 420px;
+  width: 500px;
   height: 350px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  margin-left: 50px;
+  margin-left: 105px;
   margin-top: 25px;
   border-radius: 0 0 5px 5px;
   margin-bottom: 10px;

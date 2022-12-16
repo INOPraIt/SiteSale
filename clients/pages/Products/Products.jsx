@@ -16,44 +16,69 @@ export default function Products() {
           animate={{ x: 0, opacity: 1, }}
           transition={{ delay: 0 }}
         >
-        <div className='itemFiltersDeFlex'>
-          <div>
-            <h2 className='headerFilters1'>Фильтры:</h2>
-            <div>
+          <div className='containerSecretItem'>
+            <div className='headerSecretItem1'>
+              <h1 className='headerFilters1'>Фильтры</h1>
+              <button
+                className='btnBtnFilters'
+                onClick={() => { setFilter((prev) => !prev) }}
+              >
+                <img
+                  src='https://img.icons8.com/ios-glyphs/512/delete-sign.png'
+                  className='imgBtnFilters'
+                />
+              </button>
+            </div>
+            <div className='itemSecretBlock1'>
               <p className='textFilters'>Цена:</p>
               <input
                 className='inpFilters1'
                 placeholder='От'
-                type={'number'}
+                type="number"
               />
               <input
                 className='inpFilters2'
                 placeholder='До'
-                type={'number'}
+                type="number"
               />
+              <div>
+                <button className='btnBtnFilters2'>
+                  Применить фильтры
+                </button>
+              </div>
             </div>
-            <button 
-              className='btnBtnFilters2'
-            >Применить фильтры</button>
+            <div className='itemSecretBlock2'>
+              <p className='textFilters'>Категории:</p>
+              <div class="dropdown">
+                <button class="dropbtn">Категория</button>
+                <div class="dropdown-content">
+                  <a href="#">Больницы</a>
+                  <a href="#">Продажи</a>
+                  <a href="#">Бизнес</a>
+                  <a href="#">Продажи</a>
+                  <a href="#">Бизнес</a>
+                </div>
+              </div>
+            </div>
+            <div className='itemSecretBlock3'>
+            <p className='textFilters'>Сортировать по:</p>
+              <div class="dropdown">
+                <button class="dropbtn">По</button>
+                <div class="dropdown-content">
+                  <a href="#">Новизне</a>
+                  <a href="#">Популярности</a>
+                </div>
+              </div>
+            </div>
+
+
           </div>
-          <div>
-            <button 
-              className='btnBtnFilters'
-              onClick={() => { setFilter((prev) => !prev) }}
-            >
-              <img 
-                src='https://img.icons8.com/ios-glyphs/512/delete-sign.png'
-                className='imgBtnFilters'
-              />
-            </button>
-          </div>
-        </div>
         </motion.div>
       }
       <div className='itemProducts1'>
 
         {!filter &&
-          <motion.div 
+          <motion.div
             className='inputBlockProducts'
             initial={{ x: -1000, opacity: 0, }}
             animate={{ x: 0, opacity: 1, }}
@@ -84,45 +109,48 @@ export default function Products() {
         }
       </div>
       <div className='itemProducts2'>
-        {!filter &&
-          <motion.div
-            className='headersGenProducts'
-            initial={{ x: -1000, opacity: 0, }}
-            animate={{ x: 0, opacity: 1, }}
-            transition={{ delay: 0 }}
-          >
-            <h1 className='headerProducts'>
-              Покупайте лучшие готовые решения.
-            </h1>
-            <p className='textProducts1'>
-              Нашей платформой пользуется более 10000+ человек
-            </p>
-          </motion.div>
-        }
-
       </div>
       <div className='itemProducts3'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <div>
+          {!filter &&
+            <motion.div
+              className='headersGenProducts'
+              initial={{ x: -1000, opacity: 0, }}
+              animate={{ x: 0, opacity: 1, }}
+              transition={{ delay: 0 }}
+            >
+              <h1 className='headerProducts'>
+                Покупайте лучшие готовые решения.
+              </h1>
+              <p className='textProducts1'>
+                Нашей платформой пользуется более 10000+ человек
+              </p>
+            </motion.div>
+          }
+        </div>
+        <div className='cardTetxtSite'>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     </div>
   )
