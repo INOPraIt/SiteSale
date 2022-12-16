@@ -8,7 +8,7 @@
 .containerHome {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 800px 200px;
+  grid-template-rows: 745px ;
 }
 
 .itemHome1 {
@@ -28,6 +28,7 @@
   grid-column-start: 1;
   grid-column-end: 3;
   display: flex;
+  height: 145px;
 }
 
 /* Text */

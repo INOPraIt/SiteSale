@@ -1,4 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap');
+
 .itemSidebar1 {
-  background-color: aqua;
-  height: 50px;
+  background-color: rgb(255, 255, 255);
+  height: 70px;
+  display: flex;
+}
+
+.logoSidebar {
+  font-size: 25px;
+  margin-left: 2%;
+  margin-top: 10px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.blockLinkSidebar {
+  display: flex;
+  margin-left: 1%;
+  font-size: 25px;
+}
+
+.linkSidebar1 {
+  margin-left: 30px;
+  margin-top: 15px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.linkLogoSidebar {
+  text-decoration: none;
+  color: black;
+}
+
+.linkLogoSidebar:active {
+  text-decoration: none;
+  color: black;
+}
+
+.underline-one {
+  transition: 0.4s;
+	  color: #000000; /* Цвет обычной ссылки */
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.underline-one:hover {
+  transition: 0.4s;
+	  color: rgb(0, 149, 255); /* Цвет обычной ссылки */
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.underline-one:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 22px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.underline-one:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 22px;
+    height: 2px; /* Высота линии */
+    background-color: rgb(0, 149, 255); /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+    color: rgb(0, 149, 255);
 }
