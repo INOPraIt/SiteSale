@@ -14,7 +14,10 @@ export default function Sidebar() {
           </Link>
         </div>
         <div className='blockLinkSidebar'>
-          <Link className='underline-one'>
+          <Link 
+            className='underline-one'
+            to={'/products'}
+          >
             Все
           </Link>
           <Link className='underline-one'>
@@ -26,8 +29,18 @@ export default function Sidebar() {
           <Link className='underline-one'>
             Комплекс (Сайт+Приложение)
           </Link>
+          <Link
+            to={'/bascet'}
+            className='underline-one'
+          >
+            Моя корзина
+          </Link>
         </div>
       </div>
+      <hr 
+        className='lineSidebar'
+        
+        />
     </div>
   )
 }

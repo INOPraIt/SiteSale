@@ -80,3 +80,9 @@
     transition: width 0.5s;  /* Время эффекта */
     color: rgb(0, 149, 255);
 }
+
+.lineSidebar {
+  height: 1px;
+  border: none;
+  background-color: #d2d2d2;
+}

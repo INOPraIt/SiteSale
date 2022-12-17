@@ -9,8 +9,13 @@ export default function Card() {
         className='cardProduct'
       />
       <div className="container">
-        <h4><b>120$</b></h4>
-        <p>Описание</p>
+        <h4><b>Цена - 120$</b></h4>
+        <button className='btnCardProduct1'>
+          Добавить в карзину
+        </button>
+        <button className='btnCardProduct2'>
+          Убрать из корзины
+        </button>
       </div>
     </div>
   )
