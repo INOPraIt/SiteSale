@@ -20,13 +20,22 @@ export default function Sidebar() {
           >
             Все
           </Link>
-          <Link className='underline-one'>
+          <Link 
+            to={'/products'}
+            className='underline-one'
+          >
             Сайты
           </Link>
-          <Link className='underline-one'>
+          <Link 
+            className='underline-one'
+            to={'/products'}
+          >
             Приложения
           </Link>
-          <Link className='underline-one'>
+          <Link 
+            className='underline-one'
+            to={'/products'}
+          >
             Комплекс (Сайт+Приложение)
           </Link>
           <Link

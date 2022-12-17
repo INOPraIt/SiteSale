@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ryzev\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add framer-motion
+  C:\Program Files\nodejs\node.exe C:\Users\ryzev\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add swiper@6.8.4
 
 PATH: 
   C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\BellSoft\LibericaJDK-11\bin\;C:\Python27\;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-8u342-b07\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\ryzev\AppData\Local\Microsoft\WindowsApps;C:\Users\ryzev\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ryzev\AppData\Local\Android\Sdk\platform-tools;C:\Users\ryzev\AppData\Roaming\npm;C:\Users\ryzev\AppData\Local\atom\bin
@@ -30,6 +30,7 @@ npm manifest:
       "@reduxjs/toolkit": "^1.9.0",
       "axios": "^1.2.0",
       "express": "^4.18.2",
+      "framer-motion": "^7.10.2",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
       "react-redux": "^8.0.5",
@@ -303,6 +304,18 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.19.1"
       "to-fast-properties" "^2.0.0"
   
+  "@emotion/is-prop-valid@^0.8.2":
+    "integrity" "sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA=="
+    "resolved" "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
+    "version" "0.8.8"
+    dependencies:
+      "@emotion/memoize" "0.7.4"
+  
+  "@emotion/memoize@0.7.4":
+    "integrity" "sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw=="
+    "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
+    "version" "0.7.4"
+  
   "@jridgewell/gen-mapping@^0.1.0":
     "integrity" "sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w=="
     "resolved" "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz"
@@ -385,6 +398,59 @@ Lockfile:
       "@lezer/common" "^0.15.7"
       "@lezer/lr" "^0.15.4"
       "json5" "^2.2.1"
+  
+  "@motionone/animation@^10.15.1":
+    "integrity" "sha512-mZcJxLjHor+bhcPuIFErMDNyrdb2vJur8lSfMCsuCB4UyV8ILZLvK+t+pg56erv8ud9xQGK/1OGPt10agPrCyQ=="
+    "resolved" "https://registry.npmjs.org/@motionone/animation/-/animation-10.15.1.tgz"
+    "version" "10.15.1"
+    dependencies:
+      "@motionone/easing" "^10.15.1"
+      "@motionone/types" "^10.15.1"
+      "@motionone/utils" "^10.15.1"
+      "tslib" "^2.3.1"
+  
+  "@motionone/dom@^10.15.3":
+    "integrity" "sha512-FQ7a2zMBXc1UeU8CG9G3yDpst55fbb0+C9A0VGfwOITitBCzigKZnXRgsRSWWR+FW57GSc13eGQxtYB0lKG0Ng=="
+    "resolved" "https://registry.npmjs.org/@motionone/dom/-/dom-10.15.3.tgz"
+    "version" "10.15.3"
+    dependencies:
+      "@motionone/animation" "^10.15.1"
+      "@motionone/generators" "^10.15.1"
+      "@motionone/types" "^10.15.1"
+      "@motionone/utils" "^10.15.1"
+      "hey-listen" "^1.0.8"
+      "tslib" "^2.3.1"
+  
+  "@motionone/easing@^10.15.1":
+    "integrity" "sha512-6hIHBSV+ZVehf9dcKZLT7p5PEKHGhDwky2k8RKkmOvUoYP3S+dXsKupyZpqx5apjd9f+php4vXk4LuS+ADsrWw=="
+    "resolved" "https://registry.npmjs.org/@motionone/easing/-/easing-10.15.1.tgz"
+    "version" "10.15.1"
+    dependencies:
+      "@motionone/utils" "^10.15.1"
+      "tslib" "^2.3.1"
+  
+  "@motionone/generators@^10.15.1":
+    "integrity" "sha512-67HLsvHJbw6cIbLA/o+gsm7h+6D4Sn7AUrB/GPxvujse1cGZ38F5H7DzoH7PhX+sjvtDnt2IhFYF2Zp1QTMKWQ=="
+    "resolved" "https://registry.npmjs.org/@motionone/generators/-/generators-10.15.1.tgz"
+    "version" "10.15.1"
+    dependencies:
+      "@motionone/types" "^10.15.1"
+      "@motionone/utils" "^10.15.1"
+      "tslib" "^2.3.1"
+  
+  "@motionone/types@^10.15.1":
+    "integrity" "sha512-iIUd/EgUsRZGrvW0jqdst8st7zKTzS9EsKkP+6c6n4MPZoQHwiHuVtTQLD6Kp0bsBLhNzKIBlHXponn/SDT4hA=="
+    "resolved" "https://registry.npmjs.org/@motionone/types/-/types-10.15.1.tgz"
+    "version" "10.15.1"
+  
+  "@motionone/utils@^10.15.1":
+    "integrity" "sha512-p0YncgU+iklvYr/Dq4NobTRdAPv9PveRDUXabPEeOjBLSO/1FNB2phNTZxOxpi1/GZwYpAoECEa0Wam+nsmhSw=="
+    "resolved" "https://registry.npmjs.org/@motionone/utils/-/utils-10.15.1.tgz"
+    "version" "10.15.1"
+    dependencies:
+      "@motionone/types" "^10.15.1"
+      "hey-listen" "^1.0.8"
+      "tslib" "^2.3.1"
   
   "@msgpackr-extract/msgpackr-extract-win32-x64@2.2.0":
     "integrity" "sha512-XrC0JzsqQSvOyM3t04FMLO6z5gCuhPE6k4FXuLK5xf52ZbdvcFe1yBmo7meCew9B8G2f0T9iu9t3kfTYRYROgA=="
@@ -1535,6 +1601,17 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz"
     "version" "0.2.0"
   
+  "framer-motion@^7.10.2":
+    "integrity" "sha512-2OAII9hjpMNz2Nbl2w09uKo7A0bD6xRtGnCZbPzuGGueucWgmSBLjAwzPhXwzCQWMpL3LU8jmXHjxAwIyjslxg=="
+    "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-7.10.2.tgz"
+    "version" "7.10.2"
+    dependencies:
+      "@motionone/dom" "^10.15.3"
+      "hey-listen" "^1.0.8"
+      "tslib" "2.4.0"
+    optionalDependencies:
+      "@emotion/is-prop-valid" "^0.8.2"
+  
   "fresh@0.5.2":
     "integrity" "sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q=="
     "resolved" "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz"
@@ -1597,6 +1674,11 @@ Lockfile:
     "version" "1.0.3"
     dependencies:
       "function-bind" "^1.1.1"
+  
+  "hey-listen@^1.0.8":
+    "integrity" "sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q=="
+    "resolved" "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.8.tgz"
+    "version" "1.0.8"
   
   "hoist-non-react-statics@^3.3.0", "hoist-non-react-statics@^3.3.2":
     "integrity" "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw=="
@@ -2014,7 +2096,7 @@ Lockfile:
       "iconv-lite" "0.4.24"
       "unpipe" "1.0.0"
   
-  "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@>=16.8":
+  "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@>=16.8":
     "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
     "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
     "version" "18.2.0"
@@ -2076,7 +2158,7 @@ Lockfile:
     dependencies:
       "clsx" "^1.1.1"
   
-  "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.2.0", "react@>=16", "react@>=16.8":
+  "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>=16", "react@>=16.8":
     "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
     "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
     "version" "18.2.0"
@@ -2270,10 +2352,15 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
     "version" "1.0.1"
   
-  "tslib@^2.4.0":
+  "tslib@^2.3.1", "tslib@^2.4.0":
     "integrity" "sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA=="
     "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.1.tgz"
     "version" "2.4.1"
+  
+  "tslib@2.4.0":
+    "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
+    "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
+    "version" "2.4.0"
   
   "type-fest@^0.20.2":
     "integrity" "sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ=="

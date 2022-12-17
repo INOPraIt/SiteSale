@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Bascet from './pages/Basket/Bascet';
 import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
 import Products from './pages/Products/Products';
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
     <div>
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/bascet" element={<Bascet />} />
       </Routes>

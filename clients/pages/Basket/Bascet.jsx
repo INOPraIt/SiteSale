@@ -6,18 +6,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export default function Bascet() {
-  const [interkassa, setInterkassa] = React.useState(false);
-  const [coinpayments, setCoinpayments] = React.useState(false);
-  const [enot, setEnot] = React.useState(false);
-  const [primepayments, setPrimepayments] = React.useState(false);
-
-  console.log(
-    interkassa,
-    coinpayments,
-    enot,
-    primepayments
-  );
-
   return (
     <div className='containerBascet'>
       <div className='itemBascet1'>
@@ -30,8 +18,6 @@ export default function Bascet() {
         <CardBascet />
         <CardBascet />
       </div>
-
-      {!interkassa &&
         <motion.div
           initial={{ x: 1000, opacity: 0, }}
           animate={{ x: 0, opacity: 1, }}
@@ -42,12 +28,12 @@ export default function Bascet() {
           <h2 className='textBuscet1'>Выберете способ оплаты:</h2>
           <div>
             <Link className='wayPay'>
-              1.Interkassa
+              1.Freecassa
             </Link>
           </div>
           <div>
             <Link className='wayPay'>
-              2.Coinpayments
+              2.Interkassa
             </Link>
           </div>
           <div>
@@ -57,82 +43,17 @@ export default function Bascet() {
           </div>
           <div>
             <Link className='wayPay'>
-              4.Primepayments
+              4.Coinpayments
+            </Link>
+          </div>
+          <div>
+            <Link className='wayPay'>
+              5.Primepayments
             </Link>
           </div>
           <div>
           </div>
         </motion.div>
-      }
-
-      {/* {interkassa &&
-        <motion.div
-          className='itemBascet3'
-          initial={{ x: 1000, opacity: 0, }}
-          animate={{ x: 0, opacity: 1, }}
-          transition={{ delay: 0 }}
-        >
-          <div className='blockInterkassa1'>
-            <h1 className='interkassaHeader1'>Interkassa:</h1>
-            <button
-              className='btnBtnBuscet'
-              onClick={() => { setInterkassa((prev) => !prev) }}
-            >
-              <img
-                src='https://img.icons8.com/ios-glyphs/512/delete-sign.png'
-                className='imgBtnFilters'
-              />
-            </button>
-          </div>
-          <h2 className='interkassaHeader2'>Укажите свои реквезиты:</h2>
-          <div>
-            <label className='labelCardPay1'>Номер карты:</label>
-            <input className='inpCardPay1' />
-          </div>
-        </motion.div>
-      } */}
-
-      {/* {coinpayments &&
-        <div className='itemBascet3'>
-          <motion.div
-            className='itemBascet3'
-            initial={{ x: 1000, opacity: 0, }}
-            animate={{ x: 0, opacity: 1, }}
-            transition={{ delay: 0 }}
-          >
-            <div className='blockInterkassa1'>
-              <h1 className='interkassaHeader1'>Interkassa:</h1>
-              <button
-                className='btnBtnBuscet'
-                onClick={() => { setCoinpayments((prev) => !prev) }}
-              >
-                <img
-                  src='https://img.icons8.com/ios-glyphs/512/delete-sign.png'
-                  className='imgBtnFilters'
-                />
-              </button>
-            </div>
-            <h2 className='interkassaHeader2'>Укажите свои реквезиты:</h2>
-            <div>
-              <label className='labelCardPay1'>Номер карты:</label>
-              <input className='inpCardPay1' />
-            </div>
-          </motion.div>
-        </div>
-      }
-
-      {enot &&
-        <div className='itemBascet3'>
-          enot
-        </div>
-      }
-
-      {primepayments &&
-        <div className='itemBascet3'>
-          primepayments
-        </div>
-      } */}
-
     </div>
   )
 }

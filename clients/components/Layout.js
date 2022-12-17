@@ -6,11 +6,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
-        <Sidebar />
+        {/* <Sidebar /> */}
       </div>
-      <main>{children}</main>
-      <div>
-      </div>
+        <main>{children}</main>
     </>
   )
 }
