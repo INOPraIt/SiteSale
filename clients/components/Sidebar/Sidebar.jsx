@@ -44,6 +44,12 @@ export default function Sidebar() {
           >
             Моя корзина
           </Link>
+          <Link
+            to={'/createproducts'}
+            className='underline-one'
+          >
+            Создать пост
+          </Link>
         </div>
       </div>
       <hr 

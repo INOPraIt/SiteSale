@@ -1,8 +1,7 @@
 import React from 'react';
-import './Login.css';
 import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Register() {
   return (
     <div className='containerLogin'>
       <div className='itemLogin1'>
@@ -19,7 +18,15 @@ export default function Login() {
             />
           </form>
           <form>
-            <p className='emailTextAuth' >Password</p>
+            <p className='emailTextAuth' >Пароль</p>
+            <input
+              className='inpEmailAuth'
+              type={'password'}
+              placeholder='Введите ваш пароль'
+            />
+          </form>
+          <form>
+            <p className='emailTextAuth' >Пароль еще раз</p>
             <input
               className='inpEmailAuth'
               type={'password'}
@@ -30,22 +37,14 @@ export default function Login() {
             <p>
               <Link
                 className='linkAccoiuntLogin'
-                to={'/register'}
+                to={'/'}
               >
-                Нет аккаунта?
-              </Link>
-            </p>
-            <p>
-              <Link
-                className='linkAccoiuntLogin1'
-                to={'/okno'}
-              >
-                Забыл пароль.
+                Уже есть аккаунт?
               </Link>
             </p>
           </div>
           <button className='btnLogin1'>
-            Войти
+            Зарегистрироваться
           </button>
         </div>
       </div>
