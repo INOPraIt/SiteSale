@@ -1,8 +1,34 @@
 import React from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setUser } from '../../redux/slices/User.slices';
 
 export default function Login() {
+
+  const [email, setEmail] = React.useState('');
+  const [pass, setPass] = React.useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogin = (email, password) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({user}) => {
+        console.log();
+        dispatch(setUser({
+          email: user.email,
+          id: user.uid,
+          token: user.accessToken,
+        }));
+        navigate('/home')
+      })
+      .catch(console.log)
+  }
+
   return (
     <div className='containerLogin'>
       <div className='itemLogin1'>
@@ -16,6 +42,8 @@ export default function Login() {
               className='inpEmailAuth'
               type={'email'}
               placeholder='Введите ваш email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </form>
           <form>
@@ -24,6 +52,8 @@ export default function Login() {
               className='inpEmailAuth'
               type={'password'}
               placeholder='Введите ваш пароль'
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
             />
           </form>
           <div className='linkBlockLogin'>
@@ -44,7 +74,10 @@ export default function Login() {
               </Link>
             </p>
           </div>
-          <button className='btnLogin1'>
+          <button 
+            className='btnLogin1'
+            onClick={() => handleLogin(email, pass)}
+            >
             Войти
           </button>
         </div>

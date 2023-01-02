@@ -1,9 +1,16 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth'
+import { useDispatch } from 'react-redux';
 
 export default function Home() {
-  return (
+  const dispatch = useDispatch();
+
+  const { isAuth, email } = useAuth();
+
+  return isAuth ? (
     <div className='containerHome'>
       <div className='itemHome1'>
         <div className='blockHome1'>
@@ -41,10 +48,10 @@ export default function Home() {
           <h3 className='tetxHome3'>Ссылки:</h3>
           <p className='textHome4'>
             Поддержка:
-            <a 
+            <a
               href='https://t.me/Ryzhev_3301'
               className='linksTelegram'
-              >
+            >
               @SiteSale
             </a>
           </p>
@@ -69,9 +76,11 @@ export default function Home() {
             </a>
           </p>
         </div>
-    </div>
+      </div>
       <div >
       </div>
     </div>
+  ) : (
+    <Navigate to={'/'} replace={true} />
   )
 }

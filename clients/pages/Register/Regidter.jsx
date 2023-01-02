@@ -1,7 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setUser } from '../../redux/slices/User.slices';
 
 export default function Register() {
+
+  const [email, setEmail] = React.useState('');
+  const [pass, setPass] = React.useState('');
+  const [repeadPass, setRepeadPass] = React.useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleRegister = (email, password) => {
+    const auth = getAuth();
+    console.log(auth);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(({user}) => {
+        console.log();
+        dispatch(setUser({
+          email: user.email,
+          id: user.uid,
+          token: user.accessToken,
+        }));
+        navigate('/home')
+      })
+      .catch(console.error)
+  }
+
   return (
     <div className='containerLogin'>
       <div className='itemLogin1'>
@@ -15,6 +43,8 @@ export default function Register() {
               className='inpEmailAuth'
               type={'email'}
               placeholder='Введите ваш email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </form>
           <form>
@@ -23,6 +53,8 @@ export default function Register() {
               className='inpEmailAuth'
               type={'password'}
               placeholder='Введите ваш пароль'
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
             />
           </form>
           <form>
@@ -31,6 +63,8 @@ export default function Register() {
               className='inpEmailAuth'
               type={'password'}
               placeholder='Введите ваш пароль'
+              value={repeadPass}
+              onChange={(e) => setRepeadPass(e.target.value)}
             />
           </form>
           <div className='linkBlockLogin'>
@@ -43,7 +77,10 @@ export default function Register() {
               </Link>
             </p>
           </div>
-          <button className='btnLogin1'>
+          <button 
+            onClick={() => handleRegister(email, pass)}
+            className='btnLogin1'
+            >
             Зарегистрироваться
           </button>
         </div>
