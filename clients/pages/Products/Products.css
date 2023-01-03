@@ -7,7 +7,7 @@
 }
 
 .itemProducts1 {
-  background-color: rgb(187, 221, 255);
+  background-color: rgb(246, 246, 246);
   grid-column-start: 1;
   grid-column-end: 4;
   text-align: center;
@@ -88,6 +88,32 @@
   border-top: 1px solid rgba(216, 216, 216, 0.554);
 }
 
+.priceOt {
+  width: 150px;
+  height: 40px;
+  font-family: 'Kanit', sans-serif;
+  margin-left: 40px;
+  margin-top: 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(216, 216, 216, 0.554);
+  outline: none;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.priceDo {
+  width: 150px;
+  height: 40px;
+  font-family: 'Kanit', sans-serif;
+  margin-left: 10px;
+  margin-top: 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(216, 216, 216, 0.554);
+  outline: none;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
 
 /* Blocks */
 
@@ -117,6 +143,7 @@
   width: 40px;
 }
 
+
 /* Btn */
 
 .btnFiltersProducts {
@@ -127,7 +154,35 @@
   background-color: rgba(255, 255, 255, 0);
 }
 
+.btnFiltersProducts:hover {
+  transition: 0.4s;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
 
+.btnCrosSecretBlock {
+  transition: 0.4s;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff00;
+  border: none;
+  margin-left: 190px;
+  margin-top: 5px;
+}
+
+.btnCrosSecretBlock:hover {
+  transition: 0.4s;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.imgCrosSecretBlock {
+  width: 39px;
+}
 /* text */
 
 .headerProducts {
@@ -154,149 +209,60 @@
   margin-left: 30px;
 }
 
+.headerPrice1 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
 /* SecretBlock */
 
 .secretItem1 {
-  background-color: rgb(237, 237, 237);
+  background-color: #ecf4ff;
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 2;
   grid-row-start: 1;
-  grid-row-end: 3;
-  height: 225px;
+  grid-row-end: 5;
+}
+
+.containerSecret1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 140px 100px 100px 100px 100px 100px;
+}
+
+.itemSecretBlockFilter1 {
+  background-color: #e1e1e100;
   display: flex;
 }
 
-.containerSecretItem {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 50px 175px;
+.itemSecretBlockFilter2 {
+  background-color: #ff080800;
 }
 
-.headerSecretItem1 {
-  background-color: rgb(237, 237, 237);
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  width: 100%;
+.itemSecretBlockFilter3 {
+  background-color: #091ca900;
 }
 
-.itemSecretBlock1 {
-  background-color: rgb(237, 237, 237);
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  width: 300px;
-}
-
-.itemSecretBlock2 {
-  background-color: rgb(237, 237, 237);
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-}
-
-.itemSecretBlock3 {
-  background-color: rgb(237, 237, 237);
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-}
-
-
-.btnBtnFilters {
-  transition: 0.4s;
-  width: 60px;
-  height: 60px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  margin-left: 150%;
-}
-
-.inpFilters1 {
-  width: 100px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  margin-left: 30px;
-  margin-top: 10px;
-  padding-left: 10px;
-  font-size: 17px;
-  font-family: 'Kanit', sans-serif;
-  outline: none;
-}
-
-.inpFilters2 {
-  width: 100px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  padding-left: 10px;
-  font-size: 17px;
-  font-family: 'Kanit', sans-serif;
-  outline: none;
-}
-
-
-.btnFiltersProducts:hover {
-  transition: 0.4s;
-  transform: rotate(-90deg);
-  width: 60px;
-  height: 60px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  cursor: pointer;
-}
-
-
-.btnBtnFilters:hover {
-  transition: 0.4s;
-  transform: rotate(-90deg);
-  width: 60px;
-  height: 60px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  cursor: pointer;
-}
-
-.btnBtnFilters2 {
-  transition: 0.4s;
-  width: 200px;
-  margin-left: 30px;
-  margin-top: 20px;
-  height: 40px;
-  border-radius: 10px;
-  color: rgb(0, 166, 255);
-  border: 1px solid rgb(0, 166, 255);
-  background-color: rgba(0, 166, 255, 0);
-  font-family: 'Kanit', sans-serif;
-}
-
-.btnBtnFilters2:hover {
-  transition: 0.4s;
-  width: 200px;
-  margin-left: 30px;
-  margin-top: 20px;
-  height: 40px;
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 166, 255);
-  background-color: rgb(0, 166, 255);
-  cursor: pointer;
+.itemSecretBlockFilter4 {
+  background-color: #2b063e00;
 }
 
 
 /* Dropdown */
 
 .dropbtn {
-  background-color: #0088ff;
-  color: white;
+  background-color: #0088ff00;
+  color: rgb(0, 76, 255);
   padding: 16px;
   font-size: 16px;
   border: none;
-  margin-left: 30px;
+  margin-left: 20px;
   height: 40px;
+  width: 100%;
+  display: flex;
+  font-family: 'Kanit', sans-serif;
   margin-top: 10px;
   border-radius: 10px;
 }
@@ -311,11 +277,20 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #f4f4f4;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   margin-left: 30px;
+  font-family: 'Kanit', sans-serif;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.namedFilters {
+  font-size: 18px;
+  margin-left: 10px;
+  font-family: 'Kanit', sans-serif;
 }
 
 /* Ссылки внутри выпадающего списка */
@@ -328,7 +303,9 @@
 
 /* Изменение цвета выпадающих ссылок при наведении курсора */
 .dropdown-content a:hover {
-  background-color: #ddd;}
+  background-color: #ddd;
+  border-radius: 10px;
+}
 
 /* Показать выпадающее меню при наведении курсора */
 .dropdown:hover .dropdown-content {
@@ -336,5 +313,16 @@
   display: block;
 }
 
+.category1 {
+  width: 30px;
+  transform: rotate(180deg);
+}
+
+.lineBlockCategory {
+  border: none;
+  background-color: #494949;
+  height: 1px;
+}
+
 /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
-.dropdown:hover .dropbtn {background-color: #0088ff;}
+.dropdown:hover .dropbtn {background-color: #0088ff00;}

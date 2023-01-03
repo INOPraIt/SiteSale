@@ -4,6 +4,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/slices/User.slices';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register() {
 
@@ -15,19 +17,56 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleRegister = (email, password) => {
-    const auth = getAuth();
-    console.log(auth);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(({user}) => {
-        console.log();
-        dispatch(setUser({
-          email: user.email,
-          id: user.uid,
-          token: user.accessToken,
-        }));
-        navigate('/home')
-      })
-      .catch(console.error)
+    if (email == '' || pass == '' || repeadPass == '') {
+      toast.error('Заполните все данные', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else if (pass !== repeadPass) {
+      toast.error('Введеные пароли не совпадают', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      toast.success('Вы успешно зарегистрировались', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      setTimeout(() => {
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password)
+          .then(({ user }) => {
+            console.log();
+            dispatch(setUser({
+              email: user.email,
+              id: user.uid,
+              token: user.accessToken,
+            }));
+            navigate('/home')
+          })
+          .catch(console.error)
+      }, 3000);
+    }
+
+    
   }
 
   return (
@@ -77,20 +116,34 @@ export default function Register() {
               </Link>
             </p>
           </div>
-          <button 
+          <button
             onClick={() => handleRegister(email, pass)}
             className='btnLogin1'
-            >
+          >
             Зарегистрироваться
           </button>
         </div>
       </div>
       <div className='itemLogin2'>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <img
           className='imgSwitchLoogin'
           src='https://sun9-88.userapi.com/impg/oG0cTySqCw8bd1yilixoFA_TaR3kHUeqLTcbFQ/1kYaaVH2H08.jpg?size=600x800&quality=95&sign=801d554e3c404283d0d539ce767f5522&type=album'
         />
       </div>
+
+
     </div>
   )
 }

@@ -2,10 +2,18 @@ import React from 'react';
 import Card from './components/Card/Card';
 import './Products.css';
 import { motion } from 'framer-motion';
+import CardList from './components/CardList/CardList';
 
 export default function Products() {
 
   const [filter, setFilter] = React.useState(false)
+
+  const cards = [
+    {id: 1, name: 'dawdwad'},
+    {id: 2, name: 'hdrd'},
+    {id: 3, name: 'xbfcbdxfb'},
+    {id: 4, name: 'jnhn'}
+  ]
 
   return (
     <div className='containerProducts'>
@@ -16,57 +24,91 @@ export default function Products() {
           animate={{ x: 0, opacity: 1, }}
           transition={{ delay: 0 }}
         >
-          <div className='containerSecretItem'>
-            <div className='headerSecretItem1'>
-              <h1 className='headerFilters1'>Фильтры</h1>
-              <button
-                className='btnBtnFilters'
-                onClick={() => { setFilter((prev) => !prev) }}
-              >
-                <img
-                  src='https://img.icons8.com/ios-glyphs/512/delete-sign.png'
-                  className='imgBtnFilters'
+          <div className='containerSecret1'>
+            <div className='itemSecretBlockFilter1'>
+              <div className='priceSecretContainer'>
+                <p className='headerPrice1'>Цена Р:</p>
+                <input
+                  className='priceOt'
+                  type={"number"}
+                  min={"1"}
+                  placeholder="От"
                 />
-              </button>
-            </div>
-            <div className='itemSecretBlock1'>
-              <p className='textFilters'>Цена:</p>
-              <input
-                className='inpFilters1'
-                placeholder='От'
-                type="number"
-              />
-              <input
-                className='inpFilters2'
-                placeholder='До'
-                type="number"
-              />
+                <input
+                  className='priceDo'
+                  type={"number"}
+                  min={"1"}
+                  placeholder="До"
+                />
+              </div>
               <div>
-                <button className='btnBtnFilters2'>
-                  Применить фильтры
+                <button
+                  onClick={() => { setFilter((prev) => !prev) }}
+                  className='btnCrosSecretBlock'
+                >
+                  <img
+                    className='imgCrosSecretBlock'
+                    src='https://img.icons8.com/ios-glyphs/512/delete-sign.png'
+                  />
                 </button>
               </div>
             </div>
-            <div className='itemSecretBlock2'>
-              <p className='textFilters'>Категории:</p>
+            <div className='itemSecretBlockFilter2'>
+              <hr className='lineBlockCategory' />
               <div class="dropdown">
-                <button class="dropbtn">Категория</button>
+                <button class="dropbtn">
+                  <img
+                    className='category1'
+                    src='https://img.icons8.com/material-outlined/512/circled-chevron-up.png'
+                  />
+                  <p className='namedFilters'>Категория</p>
+                </button>
                 <div class="dropdown-content">
+                  <a href="#">Личный безнес</a>
                   <a href="#">Больницы</a>
-                  <a href="#">Продажи</a>
-                  <a href="#">Бизнес</a>
-                  <a href="#">Продажи</a>
-                  <a href="#">Бизнес</a>
+                  <a href="#">Криптовалюта</a>
+                  <a href="#">Интернет магазины</a>
+                  <a href="#">It компании</a>
                 </div>
               </div>
             </div>
-            <div className='itemSecretBlock3'>
-            <p className='textFilters'>Сортировать по:</p>
+            <div className='itemSecretBlockFilter3'>
+              <hr className='lineBlockCategory' />
               <div class="dropdown">
-                <button class="dropbtn">По</button>
+                <button class="dropbtn">
+                  <img
+                    className='category1'
+                    src='https://img.icons8.com/material-outlined/512/circled-chevron-up.png'
+                  />
+                  <p className='namedFilters'>По новизне</p>
+                </button>
                 <div class="dropdown-content">
-                  <a href="#">Новизне</a>
-                  <a href="#">Популярности</a>
+                  <a href="#">Самые новые</a>
+                  <a href="#">1-2 месяца</a>
+                  <a href="#">3-4 месяца</a>
+                  <a href="#">5-6 месяцев</a>
+                  <a href="#">Больше полугода</a>
+                  <a href="#">Больше года</a>
+                </div>
+              </div>
+            </div>
+            <div className='itemSecretBlockFilter4'>
+              <hr className='lineBlockCategory' />
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <img
+                    className='category1'
+                    src='https://img.icons8.com/material-outlined/512/circled-chevron-up.png'
+                  />
+                  <p className='namedFilters'>По популярности</p>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">10-20 star</a>
+                  <a href="#">20-30 star</a>
+                  <a href="#">30-40 star</a>
+                  <a href="#">40-50 star</a>
+                  <a href="#">50-60 star</a>
+                  <a href="#">Больше 60 star</a>
                 </div>
               </div>
             </div>
@@ -74,7 +116,6 @@ export default function Products() {
         </motion.div>
       }
       <div className='itemProducts1'>
-
         {!filter &&
           <motion.div
             className='inputBlockProducts'
@@ -127,27 +168,9 @@ export default function Products() {
           }
         </div>
         <div className='cardTetxtSite'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <CardList 
+            cards={cards}
+          />
         </div>
       </div>
     </div>
