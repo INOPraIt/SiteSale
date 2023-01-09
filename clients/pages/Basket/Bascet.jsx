@@ -17,13 +17,9 @@ export default function Bascet() {
         <CardBascet />
         <CardBascet />
         <CardBascet />
+        
       </div>
-        <motion.div
-          initial={{ x: 1000, opacity: 0, }}
-          animate={{ x: 0, opacity: 1, }}
-          transition={{ delay: 0 }}
-          className='itemBascet3'
-        >
+        <div className='itemBascet3'>
           <h1 className='bascetHeader2'>Оплата:</h1>
           <h2 className='textBuscet1'>Выберете способ оплаты:</h2>
           <div>
@@ -53,7 +49,7 @@ export default function Bascet() {
           </div>
           <div>
           </div>
-        </motion.div>
+        </div>
     </div>
   )
 }

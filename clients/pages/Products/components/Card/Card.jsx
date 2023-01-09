@@ -9,14 +9,10 @@ export default function Card({name, price, link}) {
           src={link}
           className='cardProduct'
         />
-        <h4><b>Название - {name}</b></h4>
-        <h4><b>Цена - {price}</b></h4>
-        <button className='btnCardProduct1'>
-          Добавить в карзину
-        </button>
-        <button className='btnCardProduct2'>
-          Убрать из корзины
-        </button>
+        <div className='flexContComment'>
+          <p className='pTag'>Tag: Kripto</p>
+          <p className='pPrice'>Цена: 1300р</p>
+        </div>
       </div>
     </div>
   )

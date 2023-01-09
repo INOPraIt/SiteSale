@@ -8,7 +8,7 @@ const CardList = ({paramCard}) => {
       key={card.id}
       name={card.name}
       price={card.startPrice}
-      link={paramCard.link}
+      link={card.link}
     />
   )
 }
