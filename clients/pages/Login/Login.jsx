@@ -2,9 +2,6 @@ import React from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { setUser } from '../../redux/slices/User.slices';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,9 +10,6 @@ export default function Login() {
 
   const [email, setEmail] = React.useState('');
   const [pass, setPass] = React.useState('');
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
     if (email == '' || pass == '') {

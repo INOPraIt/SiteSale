@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { setUser } from '../../redux/slices/User.slices';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,9 +9,6 @@ export default function Register() {
   const [email, setEmail] = React.useState('');
   const [pass, setPass] = React.useState('');
   const [repeadPass, setRepeadPass] = React.useState('');
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleRegister = (email, password) => {
     if (email == '' || pass == '' || repeadPass == '') {

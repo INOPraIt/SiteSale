@@ -3,16 +3,13 @@ import './Sidebar.css';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth'
 import { useDispatch } from 'react-redux';
-import { removeUser } from '../../redux/slices/User.slices';
+import { removeUser } from '../../redux/slices/userSlice';
 import { motion } from 'framer-motion';
 
 export default function Sidebar() {
-
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch
   const { isAuth, email } = useAuth();
   const [secretSidebar, setSecretSidebar] = React.useState(false)
-
   return isAuth && email == 'admin@gmail.com' ? (
     <div className='conatinerSidebar'>
       {secretSidebar &&

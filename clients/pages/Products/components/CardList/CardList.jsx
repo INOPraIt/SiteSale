@@ -1,22 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Card from '../Card/Card';
+import { useSelector} from 'react-redux'
 
-const CardList = ({paramCard}) => {
-  return paramCard.map(card => 
+const CardList = () => {
+  const cards = useSelector(state => state.cards.cards);
+
+  return cards.map(card => 
     <Card 
       key={card.id}
-      name={card.name}
-      price={card.startPrice}
-      link={card.link}
+      {...card}
+      // name={card.name}
+      // category={card.category}
+      // subCategory={card.subCategory}
+      // endPrice={card.endPrice}
+      // link={card.link}
     />
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    paramCard: state.card.cards
-  }
-}
-
-export default connect(mapStateToProps, null)(CardList);
+export default CardList;

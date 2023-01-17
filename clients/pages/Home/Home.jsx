@@ -1,16 +1,9 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth'
-import { useDispatch } from 'react-redux';
 
 export default function Home() {
-  const dispatch = useDispatch();
-
-  const { isAuth, email } = useAuth();
-
-  return isAuth ? (
+  return (
     <div className='containerHome'>
       <div className='itemHome1'>
         <div className='blockHome1'>
@@ -53,7 +46,7 @@ export default function Home() {
               className='linksTelegram'
             >
               @SiteSale
-            </a>
+            </a> 
           </p>
         </div>
         <div className='blockHome3'>
@@ -80,7 +73,5 @@ export default function Home() {
       <div >
       </div>
     </div>
-  ) : (
-    <Navigate to={'/'} replace={true} />
   )
 }

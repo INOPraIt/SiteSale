@@ -1,12 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './CreateProducts.css';
-import { createCard } from '../../redux/actions/card.action';
 import { ToastContainer, toast } from 'react-toastify';
 import Select from 'react-select';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addCard } from '../../redux/slices/cardSlice';
 
-const CreateProducts = (props) => {
+const CreateProducts = () => {
+  const dispatch = useDispatch();
+
   const optionsCategory = [
     { value: 'Sites', label: 'Сайты'},
     { value: 'Apps', label: 'Приложения'},
@@ -65,7 +67,14 @@ const CreateProducts = (props) => {
         link: link
       }
 
-      props.createCard(newCard)
+      dispatch(addCard({
+        name: name,
+        category: currentCategory,
+        subCategory: currentSubCategory,
+        startPrice: startPrice,
+        endPrice: endPrice,
+        link: link
+      }));
 
       toast.success('Продукт создан!', {
         position: "top-right",
@@ -217,8 +226,4 @@ const CreateProducts = (props) => {
   )
 }
 
-const mapDispachToProps = {
-  createCard
-}
-
-export default connect(null, mapDispachToProps)(CreateProducts)
+export default CreateProducts;

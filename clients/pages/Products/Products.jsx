@@ -1,28 +1,11 @@
 import React from 'react';
-import Card from './components/Card/Card';
 import './Products.css';
 import { motion } from 'framer-motion';
 import CardList from './components/CardList/CardList';
-import axios from 'axios';
 
 export default function Products() {
 
   const [filter, setFilter] = React.useState(false)
-
-  const cards = [
-    { id: 1, name: 'dawdwad' },
-    { id: 2, name: 'hdrd' },
-    { id: 3, name: 'xbfcbdxfb' },
-    { id: 4, name: 'jnhn' }
-  ]
-
-  axios({
-    method: 'get',
-    url: 'http://localhost:5000/api/getcards'
-  })
-    .then((response) => {
-      console.log(response.data);
-    });
 
   return (
     <div className='containerProducts'>
@@ -71,16 +54,16 @@ export default function Products() {
           transition={{ delay: 0 }}
         >
           <div>
-            <input 
+            <input
               className='inputSearchTag'
               placeholder='Теги'
             />
-            <input 
+            <input
               type={'number'}
               className='inputSearchPrice'
               placeholder='Цена от:'
             />
-            <input 
+            <input
               type={'number'}
               className='inputSearchPriceDo'
               placeholder='Цена до:'
@@ -103,7 +86,6 @@ export default function Products() {
       <div className='itemProducts6'>
         <div className='cardTetxtSite'>
           <CardList
-            cards={cards}
           />
         </div>
       </div>
