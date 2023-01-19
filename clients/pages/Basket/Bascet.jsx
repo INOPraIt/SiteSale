@@ -3,10 +3,15 @@ import Card from '../Products/components/Card/Card';
 import './Bascet.css';
 import CardBascet from './components/CardBascet/CardBascet';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Bascet() {
-  return (
+
+  const {isAuth} = useAuth();
+  const navigate = useNavigate();
+
+  return isAuth ? (
     <div className='containerBascet'>
       <div className='itemBascet1'>
         <h1 className='bascetHeader1'>Ваша корзина:</h1>
@@ -51,5 +56,9 @@ export default function Bascet() {
           </div>
         </div>
     </div>
+  ) : (
+    React.useEffect(() => {
+      navigate("/")
+    })
   )
 }

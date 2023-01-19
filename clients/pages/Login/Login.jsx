@@ -1,15 +1,19 @@
 import React from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { setUser } from '../../redux/slices/userSlice';
+import { useDispatch } from 'react-redux';
 
 export default function Login() {
 
   const [email, setEmail] = React.useState('');
   const [pass, setPass] = React.useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
     if (email == '' || pass == '') {

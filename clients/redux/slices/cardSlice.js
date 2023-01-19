@@ -8,7 +8,6 @@ const cardSlice = createSlice({
   reducers: {
     addCard(state, action) {
       console.log(action);
-
       state.cards.push({
         id: Date.now(),
         name: action.payload.name,
@@ -18,7 +17,7 @@ const cardSlice = createSlice({
         endPrice: action.payload.endPrice,
         link: action.payload.link
       })
-    },
+    }
   },
 });
 

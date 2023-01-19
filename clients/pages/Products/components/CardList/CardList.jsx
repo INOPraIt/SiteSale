@@ -1,19 +1,21 @@
 import React from 'react';
 import Card from '../Card/Card';
-import { useSelector} from 'react-redux'
+import { useSelector } from 'react-redux';
+import { useGetGoodsQuery } from '../../../../redux/getCards';
 
-const CardList = () => {
-  const cards = useSelector(state => state.cards.cards);
+const CardList = ({onShowItem}) => {
 
-  return cards.map(card => 
+  const {data = [], isLoading } = useGetGoodsQuery();
+  if (isLoading) return <h1>Loading...</h1>
+  
+
+  return data.map(card => 
     <Card 
       key={card.id}
-      {...card}
-      // name={card.name}
-      // category={card.category}
-      // subCategory={card.subCategory}
-      // endPrice={card.endPrice}
-      // link={card.link}
+      name={card.header}
+      link={card.capScrin}
+      startPrice={card.price}
+      onShowItem={onShowItem}
     />
   )
 }

@@ -1,9 +1,15 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Home() {
-  return (
+
+  const navigate = useNavigate();
+  const { isAuth } = useAuth();
+
+  return isAuth ? (
     <div className='containerHome'>
       <div className='itemHome1'>
         <div className='blockHome1'>
@@ -73,5 +79,9 @@ export default function Home() {
       <div >
       </div>
     </div>
+  ) : (
+    React.useEffect(() => {
+      navigate("/")
+    })
   )
 }

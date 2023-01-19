@@ -5,10 +5,13 @@ import Select from 'react-select';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addCard } from '../../redux/slices/cardSlice';
+import { useAuth } from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const CreateProducts = () => {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  const {isAuth} = useAuth();
   const optionsCategory = [
     { value: 'Sites', label: 'Сайты'},
     { value: 'Apps', label: 'Приложения'},
@@ -124,7 +127,7 @@ const CreateProducts = () => {
     setCurrentSubCategory(newValue)
   }
 
-  return (
+  return isAuth ? (
     <div className='containerCreateProducts'>
       <div className='productItem1'>
         <div>
@@ -223,6 +226,10 @@ const CreateProducts = () => {
         theme="light"
       />
     </div>
+  ) : (
+    React.useEffect(() => {
+      navigate("/")
+    })
   )
 }
 

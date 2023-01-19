@@ -7,7 +7,7 @@ import { removeUser } from '../../redux/slices/userSlice';
 import { motion } from 'framer-motion';
 
 export default function Sidebar() {
-  const dispatch = useDispatch
+  const dispatch = useDispatch();
   const { isAuth, email } = useAuth();
   const [secretSidebar, setSecretSidebar] = React.useState(false)
   return isAuth && email == 'admin@gmail.com' ? (
@@ -98,6 +98,18 @@ export default function Sidebar() {
               Копии
             </button>
           </div>
+          <div className='itemSidebar2'>
+            <input
+              className='searchInp'
+              placeholder='Search...'
+            />
+            <button
+              className='btnLogout'
+              onClick={() => dispatch(removeUser())}
+            >
+              Выйти
+            </button>
+          </div>
         </motion.div>
       }
       <div className='itemSidebar1'>
@@ -161,6 +173,7 @@ export default function Sidebar() {
         />
         <button
           className='btnLogout'
+          onClick={() => dispatch(removeUser())}
         >
           Выйти
         </button>
@@ -281,6 +294,7 @@ export default function Sidebar() {
         />
         <button
           className='btnLogout'
+          onClick={() => dispatch(removeUser())}
         >
           Выйти
         </button>

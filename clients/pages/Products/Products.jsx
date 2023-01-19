@@ -2,12 +2,24 @@ import React from 'react';
 import './Products.css';
 import { motion } from 'framer-motion';
 import CardList from './components/CardList/CardList';
+import { useAuth } from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import ShowFullItem from './components/ShowFullItem';
 
 export default function Products() {
 
-  const [filter, setFilter] = React.useState(false)
+  const [filter, setFilter] = React.useState(false);
+  const { isAuth } = useAuth();
+  const navigate = useNavigate();
+  const [showFullItem, setShowFullItem] = React.useState(false);
 
-  return (
+  const onShowItem = () => {
+    return setShowFullItem(prev => !prev)
+  }
+
+  console.log(showFullItem);
+
+  return isAuth ? (
     <div className='containerProducts'>
       <div className='itemProducts1'>
         <div className='inputBlockProducts'>
@@ -85,10 +97,18 @@ export default function Products() {
       </div>
       <div className='itemProducts6'>
         <div className='cardTetxtSite'>
-          <CardList
-          />
+          <CardList showFullItem={onShowItem}/>
+          {showFullItem &&
+            <div>
+              <ShowFullItem />
+            </div>
+          }
         </div>
       </div>
     </div>
+  ) : (
+    React.useEffect(() => {
+      navigate("/")
+    })
   )
 }
