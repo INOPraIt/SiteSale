@@ -1,25 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  showItem: null,
+  cardName: ''
+}
+
 const cardSlice = createSlice({
-  name: 'cards',
-  initialState: {
-    cards: []
-  },
+  name: 'descriptionCards',
+  initialState,
   reducers: {
-    addCard(state, action) {
+    onSeeShowItem(state, action) {
+      console.log(state);
       console.log(action);
-      state.cards.push({
-        id: Date.now(),
-        name: action.payload.name,
-        category: action.payload.currentCategory,
-        subCategory: action.payload.currentSubCategory,
-        startPrice: action.payload.startPrice,
-        endPrice: action.payload.endPrice,
-        link: action.payload.link
-      })
+      console.log(action.payload.cardName);
+      state.showItem = action.payload.showItem;
+      state.cardName = action.payload.cardName;
+    },
+    offSeeShowItem(state, action) {
+      console.log(state);
+      console.log(action);
+      state.showItem = action.payload.ofItem;
+      state.cardName = '';
     }
   },
 });
 
-export const { addCard } = cardSlice.actions;
+export const { onSeeShowItem, offSeeShowItem } = cardSlice.actions;
 export default cardSlice.reducer;

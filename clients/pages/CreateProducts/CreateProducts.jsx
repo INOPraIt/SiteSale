@@ -70,14 +70,14 @@ const CreateProducts = () => {
         link: link
       }
 
-      dispatch(addCard({
-        name: name,
-        category: currentCategory,
-        subCategory: currentSubCategory,
-        startPrice: startPrice,
-        endPrice: endPrice,
-        link: link
-      }));
+      // dispatch(addCard({
+      //   name: name,
+      //   category: currentCategory,
+      //   subCategory: currentSubCategory,
+      //   startPrice: startPrice,
+      //   endPrice: endPrice,
+      //   link: link
+      // }));
 
       toast.success('Продукт создан!', {
         position: "top-right",

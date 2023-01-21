@@ -35,7 +35,7 @@
 
 
 .itemProducts4 {
-  background-color: rgba(255, 255, 255, 0.615);
+  background-color: rgba(184, 31, 31, 0);
   grid-column-start: 1;
   grid-column-end: 5;
   margin-left: 5%;
@@ -60,6 +60,104 @@
   grid-row-start: 4;
   grid-row-end: 5;
   overflow: auto;
+}
+
+/* ShowItemSecret */
+
+.containerSecretShowItem {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr;
+  grid-template-rows: 100px 500px 40px;
+  background-color: #fafafaea;
+  margin-top: 50px;
+}
+
+.secretShowItem1 {
+  background-color: rgba(100, 156, 17, 0);
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: center;
+}
+
+.secretShowItem2 {
+  background-color: rgba(17, 156, 96, 0);
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.secretShowItem3 {
+  background-color: rgba(17, 63, 156, 0);
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: block;
+}
+
+.imgSecretShowItem1 {
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.textNamed {
+  font-family: 'Kanit', sans-serif;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.removeShowItem {
+  transition: 0.4s;
+  width: 100%;
+  height: 40px;
+  border: 1px solid red;
+  background-color: #ffffff00;
+  color: red;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.removeShowItem:hover {
+  transition: 0.4s;
+  width: 100%;
+  height: 40px;
+  border: 1px solid red;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+
+}
+
+.addBascet {
+  transition: 0.4s;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #006aff;
+  background-color: #ffffff00;
+  color: #006aff;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.addBascet:hover {
+  transition: 0.4s;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #006aff;
+  background-color: #006aff;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+
+}
+
+
+
+.textF1 {
+  color: #006aff;
 }
 
 .cardTetxtSite {
